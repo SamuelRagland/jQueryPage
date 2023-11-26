@@ -1,0 +1,112 @@
+* > * {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav > ul {
+    list-style: none;
+    display: flex;
+    gap: 1em;
+    font-weight: bold;
+}
+
+li > a {
+    text-decoration: none;
+    color: red;
+    border: 1px solid red;
+    padding: .5em .75em;
+}
+
+li > a:hover {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+
+/* main {
+    
+} */
+
+#shop {
+    padding: 2em;
+    color: white;
+    background-color: red;
+}
+
+#shop > div > img {
+    width: 30%;
+}
+#shop > h1 {
+    text-align: center;
+}
+#shop > div > a {
+    padding: 1em 2em;
+    background-color: white;
+    text-decoration: none;
+    color: red;
+    height: min-content;
+}
+#shopButton {
+    font-weight: bold;
+    border: 0px solid white;
+}
+
+#squad {
+    font-size: 1.5em;
+    color: red;
+}
+#squad > h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: lightblue;
+    padding: 1em;
+    cursor: pointer;
+}
+
+#squad > h2:hover {
+    background-color: aliceblue;
+}
+
+.flex-hor {
+    display: flex;
+    flex-wrap: wrap;
+}
+.centered {
+    align-items: center;
+    justify-content: center;
+}
+
+#starters-wrap::after, #bench-wrap::after {
+    margin-left: .5em;
+    display: inline-block;
+    content: '>';
+}
+#starters-wrap.active::after, #bench-wrap.active::after{
+    transform: rotate(90deg);
+}
+
+#legends {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+.legend {
+    width: 25%;
+    text-align: center;
+    background-color: red;
+    padding: 1em;
+    color: white;
+    font-size: 1.5em;
+    border-radius: .25em;
+}
+.legend > img {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+.legend:hover {
+    box-shadow: 0 0 1em -.25em gold;
+}
+
+#shop:hover #shopButton {
+    background-color: red;
+    color: white;
+}

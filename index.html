@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>Final</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#squad">Squad</a></li>
+                <li><a href="#legends">Legends</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="shop">
+            <h1>Visit the Arsenal Shop!</h1>
+            <div class="flex-hor centered">
+                <a id="shopButton" href="https://arsenaldirect.arsenal.com/">Shop</a>
+                <img src="./images/arsenal-logo.png" alt="Arsenal FC">
+            </div>
+        </div>
+        <div id="squad">
+                <h2 id="starters-wrap">Starters</h2>
+                <ul id="starters">
+                    <li>David Raya</li>
+                    <li>Takehiro Tomiyasu</li>
+                    <li>William Saliba</li>
+                    <li>Gabriel</li>
+                    <li>Oleksandr Zinchenko</li>
+                    <li>Kai Havertz</li>
+                    <li>Jorginho</li>
+                    <li>Declan Rice</li>
+                    <li>Bukayo Saka</li>
+                    <li>Leandro Trossard</li>
+                    <li>Gabriel Martinelli</li>
+                </ul>
+                <h2 id="bench-wrap">Bench</h2>
+                <ul id="bench">
+                    <li>Fabio Viera</li>
+                    <li>Eddie Nketiah</li>
+                    <li>Reiss Nelson</li>
+                    <li>Jakub Kiwior</li>
+                    <li>Aaron Ramsdale</li>
+                    <li>Reuell Walters</li>
+                    <li>Mohammed Elneny</li>
+                    <li>Bradley Ibrahim</li>
+                    <li>Charles Sagoe Jr.</li>
+                </ul>
+        </div>
+        <div id="legends" class="centered">
+            <div class="legend">
+                <h3>Thierry Henry</h3>
+                <img src="./images/ThierryHenry.jfif" alt="Thierry Henry" height="150">
+                <div class="legend-info"><p>Born: August 17, 1977</p><p>Nationality: France</p></div>
+            </div>
+            <div class="legend">
+                <h3>Ian Wright</h3>
+                <img src="./images/IanWright.webp" alt="Ian Wright" width="150">
+                <div class="legend-info"><p>Born: November 3, 1963</p><p>Nationality: England</p></div>
+            </div>
+            <div class="legend">
+                <h3>Dennis Bergkamp</h3>
+                <img src="./images/DennisBergkamp.jpg" alt="Dennis Bergkamp" height="150">
+                <div class="legend-info"><p>Born: May 10, 1969</p><p>Nationality: Netherlands</p></div>
+            </div>
+            <div class="legend">
+                <h3>Tony Adams</h3>
+                <img src="./images/TonyAdams.webp" alt="Tony Adams" width="150">
+                <div class="legend-info"><p>Born: October 10, 1966</p><p>Nationality: England</p></div>
+            </div>
+            <div class="legend">
+                <h3>Patrick Vieira</h3>
+                <img src="./images/PatrickVieira.jfif" alt="Patrick Vieira" height="150">
+                <div class="legend-info"><p>Born: June 23, 1967</p><p>Nationality: France</p></div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Arsenal &copy;</p>
+    </footer>
+    <script type="text/javascript">
+        $('#shop').on('mouseover', function(){
+            $('#shopButton').animate({
+                borderWidth: "10px"
+            }, {
+                duration: 200
+            });
+        })
+        $('#shop').on('mouseleave', function(){
+            $('#shopButton').animate({
+                borderWidth: "0px"
+            }, {
+                duration: 200
+            });
+        })
+
+        $("document").ready(function() {
+            $('#starters, #bench, .legend-info').hide();
+        })
+
+        $('#starters-wrap, #bench-wrap').on('click', function(){
+            let currList = $(this).next();
+            console.log(currList);
+            currList.toggle(1000);
+            $(this).toggleClass('active');
+        })
+
+        $('.legend').on('mouseenter', function() {
+            $(this).animate({
+                padding: '2em'
+            }, {
+                duration: 200
+            });
+            $(this).append("<p>Click To Expand</p>");
+        })
+        $('.legend').on('mouseleave', function() {
+            $(this).animate({
+                padding: '1em'
+            }, {
+                duration: 200
+            });
+            $("p").filter(":contains('Expand')").remove();
+        })
+        
+        $('.legend').on('click', function(){
+            $(this).children('.legend-info').toggle();
+            $("p").filter(":contains('Expand')").remove();
+        })
+    </script>
+</body>
+</html>
