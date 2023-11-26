@@ -20,7 +20,7 @@
             <h1>Visit the Arsenal Shop!</h1>
             <div class="flex-hor centered">
                 <a id="shopButton" href="https://arsenaldirect.arsenal.com/">Shop</a>
-                <img src="./images/arsenal-logo.png" alt="Arsenal FC">
+                <img id="logo" src="./images/arsenal-logo.png" alt="Arsenal FC">
             </div>
         </div>
         <div id="squad">
@@ -100,6 +100,12 @@
 
         $("document").ready(function() {
             $('#starters, #bench, .legend-info').hide();
+            $('#logo').css('width', '0').animate({
+                width: '30%'
+            }, {
+                duration: 2000
+            }
+            )
         })
 
         $('#starters-wrap, #bench-wrap').on('click', function(){
